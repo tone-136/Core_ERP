@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Root Menu: Master Data (top-level App) -->
+    <menuitem
+        id="menu_master_data_root"
+        name="Master Data"
+        sequence="10"/>
+
+    <!-- First-level: Configuration -->
+    <menuitem
+        id="menu_master_data_configuration"
+        name="Configuration"
+        parent="menu_master_data_root"
+        sequence="10"/>
+
+    <!-- Second-level: Sales Order Type -->
+    <menuitem
+        id="menu_sales_order_type"
+        name="Sales Order Type"
+        parent="menu_master_data_configuration"
+        action="action_sales_order_type"
+        sequence="10"/>
+
+</odoo>

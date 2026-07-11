@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================
+         SALES ORDER TYPE
+         Views → Action → Menu item
+         Root and Configuration parent menus are defined here because
+         this file is loaded first. All other view files simply attach
+         their leaf menu items to these shared parent menu IDs.
+    ============================================================ -->
+
+    <!-- Tree (List) View -->
+    <record id="view_sales_order_type_tree" model="ir.ui.view">
+        <field name="name">sales.order.type.tree</field>
+        <field name="model">sales.order.type</field>
+        <field name="arch" type="xml">
+            <tree string="Sales Order Types">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_sales_order_type_form" model="ir.ui.view">
+        <field name="name">sales.order.type.form</field>
+        <field name="model">sales.order.type</field>
+        <field name="arch" type="xml">
+            <form string="Sales Order Type">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Window Action -->
+    <record id="action_sales_order_type" model="ir.actions.act_window">
+        <field name="name">Sales Order Types</field>
+        <field name="res_model">sales.order.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Sales Order Type
+            </p>
+        </field>
+    </record>
+
+    <!-- Root menu: Master Data (top-level App icon) -->
+    <menuitem
+        id="menu_master_data_root"
+        name="Master Data"
+        web_icon="master_data,static/description/icon.png"
+        sequence="10"/>
+
+    <!-- Level 1: Configuration -->
+    <menuitem
+        id="menu_master_data_configuration"
+        name="Configuration"
+        parent="menu_master_data_root"
+        sequence="10"/>
+
+    <!-- Level 2: Sales Order Type -->
+    <menuitem
+        id="menu_sales_order_type"
+        name="Sales Order Type"
+        parent="menu_master_data_configuration"
+        action="action_sales_order_type"
+        sequence="10"/>
+
+</odoo>

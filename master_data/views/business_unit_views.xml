@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================
+         BUSINESS MODEL
+         Views → Action → Menu item
+         The parent menus (menu_master_data_root,
+         menu_master_data_configuration) are defined in
+         sales_order_type_views.xml which is loaded first.
+    ============================================================ -->
+
+    <!-- Tree (List) View -->
+    <record id="view_business_unit_tree" model="ir.ui.view">
+        <field name="name">business.unit.tree</field>
+        <field name="model">business.unit</field>
+        <field name="arch" type="xml">
+            <tree string="Business Units">
+                <field name="name"/>
+                <field name="full_name"/>
+                <field name="short_code"/>
+                <field name="business_type_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_business_unit_form" model="ir.ui.view">
+        <field name="name">business.unit.form</field>
+        <field name="model">business.unit</field>
+        <field name="arch" type="xml">
+            <form string="Business Unit">
+                <sheet>
+                    <group string="General Information">
+                        <field name="name"/>
+                        <field name="full_name"/>
+                        <field name="short_code"/>
+                        <field name="business_type_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Window Action -->
+    <record id="action_business_unit" model="ir.actions.act_window">
+        <field name="name">Business Unit</field>
+        <field name="res_model">business.unit</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Business
+            </p>
+        </field>
+    </record>
+
+    <!-- Level 2: Business -->
+    <menuitem
+        id="menu_business_unit"
+        name="Business Unit"
+        parent="menu_master_data_configuration"
+        action="action_business_unit"
+        sequence="30"/>
+
+</odoo>

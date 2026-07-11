@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================
+         BUSINESS TYPE
+         Views → Action → Menu item
+         The parent menus (menu_master_data_root,
+         menu_master_data_configuration) are defined in
+         sales_order_type_views.xml which is loaded first.
+    ============================================================ -->
+
+    <!-- Tree (List) View -->
+    <record id="view_business_type_tree" model="ir.ui.view">
+        <field name="name">business.type.tree</field>
+        <field name="model">business.type</field>
+        <field name="arch" type="xml">
+            <tree string="Business Types">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_business_type_form" model="ir.ui.view">
+        <field name="name">business.type.form</field>
+        <field name="model">business.type</field>
+        <field name="arch" type="xml">
+            <form string="Business Type">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Window Action -->
+    <record id="action_business_type" model="ir.actions.act_window">
+        <field name="name">Business Types</field>
+        <field name="res_model">business.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Business Type
+            </p>
+        </field>
+    </record>
+
+    <!-- Level 2: Business Type -->
+    <menuitem
+        id="menu_business_type"
+        name="Business Type"
+        parent="menu_master_data_configuration"
+        action="action_business_type"
+        sequence="20"/>
+
+</odoo>

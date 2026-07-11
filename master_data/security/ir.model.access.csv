@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sales_order_type_manager,sales.order.type.manager,model_sales_order_type,base.group_system,1,1,1,1
+access_sales_order_type_user,sales.order.type.user,model_sales_order_type,base.group_user,1,1,1,0
+access_business_type_manager,business.type.manager,model_business_type,base.group_system,1,1,1,1
+access_business_type_user,business.type.user,model_business_type,base.group_user,1,1,1,0
+access_business_unit_manager,business.unit.manager,model_business_unit,base.group_system,1,1,1,1
+access_business_unit_user,business.unit.user,model_business_unit,base.group_user,1,1,1,0
+access_unit_part_manager,unit.part.manager,model_unit_part,base.group_system,1,1,1,1
+access_unit_part_user,unit.part.user,model_unit_part,base.group_user,1,1,1,0
+
